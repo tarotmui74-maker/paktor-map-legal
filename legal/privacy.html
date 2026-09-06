@@ -12,7 +12,7 @@
     <header>
       <p class="badge">Paktor Map</p>
       <h1>私隱政策</h1>
-      <p class="updated">最後更新：2026年5月19日 · Last updated: 19 May 2026</p>
+      <p class="updated">最後更新：2026年9月6日 · Last updated: 6 Sep 2026</p>
       <p class="lead">本政策說明 Paktor Map（「我們」「本 App」）如何處理你的資料。使用本 App 即表示你理解並同意本政策。</p>
     </header>
 
@@ -27,9 +27,10 @@
         <li><strong>行程與內容</strong>：你建立的約會行程、標題、時間、完成狀態、回憶筆記、連結地點名稱等。若你與伴侶使用<strong>共享代碼</strong>，相關行程會透過雲端同步（見下文第三方服務）。</li>
         <li><strong>收藏與偏好</strong>：收藏的地點、語言／地區偏好、拍拖偏好標籤等，主要儲存在你的裝置。</li>
         <li><strong>你上傳的行程分享內容</strong>：文字描述、標籤，以及你從相簿<strong>主動選取</strong>的相片（目前主要儲存在裝置本機，用於「分享行程」功能）。</li>
-        <li><strong>情侶共享代碼</strong>：用於與伴侶配對行程；代碼會以安全方式儲存在裝置 Keychain。</li>
+        <li><strong>情侶共享代碼</strong>：已認識的伴侶輸入同一組代碼後同步行程；代碼以安全方式儲存在裝置 Keychain。解除連線後雲端會清雙方關聯及該組共享行程／心意。</li>
         <li><strong>位置</strong>：僅在你點選「附近」並授權定位後，於<strong>裝置上</strong>計算與景點的距離以作排序；我們<strong>不會</strong>將你的 GPS 座標上傳至我們的伺服器作廣告或追蹤用途。</li>
-        <li><strong>裝置與登入紀錄</strong>：為帳戶安全，App 可能在本機記錄裝置名稱與最近登入時間（示範／管理用途）。</li>
+        <li><strong>通知／推送</strong>：若你允許通知，可用於行程提醒，以及情侶「miss u」等功能相關推送（可於系統設定關閉）。</li>
+        <li><strong>裝置識別（推送）</strong>：為發送推送，Firebase Cloud Messaging 可能處理裝置推送 token。</li>
       </ul>
 
       <h2>3. 我們如何使用資料</h2>
@@ -55,8 +56,13 @@
           </tr>
           <tr>
             <td>Google Cloud Firestore</td>
-            <td>情侶共享行程同步；電郵註冊狀態（如適用）</td>
-            <td>行程內容、共享代碼相關文件、電郵（註冊流程）</td>
+            <td>情侶共享行程同步；公海內容；電郵註冊狀態（如適用）</td>
+            <td>行程內容、共享代碼相關文件、公海投稿／留言／舉報、電郵（註冊流程）</td>
+          </tr>
+          <tr>
+            <td>Firebase Cloud Messaging</td>
+            <td>推送通知（例如關 App 時的心意通知）</td>
+            <td>裝置推送 token、通知內容相關識別</td>
           </tr>
           <tr>
             <td>Google Sign-In</td>
@@ -77,7 +83,7 @@
       <ul>
         <li><strong>定位（使用 App 期間）</strong>：用於「附近」排序；可不授權，其他功能仍可使用。</li>
         <li><strong>相簿</strong>：僅在你主動挑選相片上傳行程或儲存證書圖時讀取／寫入；不會在背景掃描相簿。</li>
-        <li><strong>通知</strong>：用於行程提醒等；可在系統設定或 App 設定中關閉。</li>
+        <li><strong>通知</strong>：用於行程提醒及情侶相關推送等；可在系統設定或 App 設定中關閉。</li>
       </ul>
 
       <h2>6. 資料儲存與保留</h2>
@@ -90,8 +96,8 @@
       <h2>7. 資料安全</h2>
       <p>我們採用業界常見做法（包括加密連線、Firebase 安全規則、Keychain 儲存敏感代碼等）保護資料。請勿與他人分享你的共享代碼與登入憑證。</p>
 
-      <h2>8. 兒童</h2>
-      <p>本 App 並非針對 13 歲以下兒童設計。若你認為我們誤收了兒童資料，請聯絡我們刪除。</p>
+      <h2>8. 年齡與兒童</h2>
+      <p>本 App <strong>僅供 17 歲或以上</strong>人士使用。我們不會故意收集未滿 17 歲人士的個人資料。若你認為我們誤收了未成年人資料，請聯絡我們刪除。</p>
 
       <h2>9. 你的權利</h2>
       <p>視你所在地法律，你可能享有查閱、更正、刪除或限制處理個人資料的權利。請透過 <a href="mailto:support@paktormap.app">support@paktormap.app</a> 提出請求；我們會於合理時間內回覆。</p>
@@ -107,15 +113,17 @@
     <section class="lang-block" lang="en">
       <h2>Privacy Policy (English)</h2>
       <p><strong>Paktor Map</strong> is a Hong Kong date-spots and trip-planning app. Contact: <a href="mailto:support@paktormap.app">support@paktormap.app</a>.</p>
+      <h3>Age</h3>
+      <p>Paktor Map is for people <strong>17 or older</strong>. We do not knowingly collect personal data from anyone under 17. Contact us if you believe we have data about a minor.</p>
       <h3>What we collect</h3>
-      <p>Depending on features you use: account info (email, phone, display name, user ID via Firebase); trip titles, notes, and schedule data; favorites and preferences (mostly on-device); photos you <strong>choose</strong> from your library (stored primarily on-device); couple share codes (Keychain); <strong>location only on-device</strong> for “Nearby” sorting—not uploaded for ads or tracking.</p>
+      <p>Depending on features you use: account info (email, phone, display name, user ID via Firebase); trip titles, notes, and schedule data; Open Sea posts/comments/reports; favorites and preferences (mostly on-device); photos you <strong>choose</strong> from your library (stored primarily on-device); couple share codes (Keychain); <strong>location only on-device</strong> for “Nearby” sorting—not uploaded for ads or tracking; push tokens if you allow notifications.</p>
       <h3>How we use it</h3>
-      <p>App functionality, personalization, local trip reminders, and account support. We do <strong>not</strong> sell your data or use it for cross-app tracking.</p>
+      <p>App functionality, personalization, local reminders, couple miss-you pushes (when enabled), and account support. We do <strong>not</strong> sell your data or use it for cross-app tracking.</p>
       <h3>Third parties</h3>
-      <p>Firebase Authentication, Cloud Firestore (shared trips), Google Sign-In, and Sign in with Apple. We do <strong>not</strong> integrate ad or Firebase Analytics SDKs for marketing tracking at this time.</p>
+      <p>Firebase Authentication, Cloud Firestore, Firebase Cloud Messaging, Google Sign-In, and Sign in with Apple. We do <strong>not</strong> integrate ad or Firebase Analytics SDKs for marketing tracking at this time.</p>
       <h3>Your choices</h3>
       <p>Manage permissions in iOS Settings; sign out, unlink couple sharing, or delete your account in-app where available. Email us to request data deletion assistance.</p>
-      <p>See also our <a href="support.html">Support page</a> and <a href="terms.html">Terms of Service</a>.</p>
+      <p>See also our <a href="support.html">Support page</a>, <a href="terms.html">Terms of Service</a>, and <a href="community.html">Community Guidelines</a>.</p>
     </section>
 
     <footer>
