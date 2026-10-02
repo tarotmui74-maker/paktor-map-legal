@@ -12,7 +12,7 @@
     <header>
       <p class="badge">Paktor Map</p>
       <h1>私隱政策</h1>
-      <p class="updated">最後更新：2026年9月14日 · Last updated: 14 Sep 2026</p>
+      <p class="updated">最後更新：2026年10月3日 · Last updated: 3 Oct 2026</p>
       <p class="lead">本政策說明 Paktor Map（「我們」「本 App」）如何處理你的資料。使用本 App 即表示你理解並同意本政策。</p>
     </header>
 
@@ -25,7 +25,9 @@
       <ul>
         <li><strong>帳戶資料</strong>：若你選擇登入，包括電郵地址、顯示名稱，以及 Firebase 指派的帳戶識別碼；你可使用 Apple、Google 或電郵等方式登入。本 App <strong>不提供</strong>電話號碼登入，亦不會為此收集手機號碼。</li>
         <li><strong>行程與內容</strong>：你建立的約會行程、標題、時間、完成狀態、回憶筆記、連結地點名稱等。若你與伴侶使用<strong>共享代碼</strong>，相關行程會透過雲端同步（見下文第三方服務）。</li>
-        <li><strong>收藏與偏好</strong>：收藏的地點、語言／地區偏好、拍拖偏好標籤等，主要儲存在你的裝置。</li>
+        <li><strong>收藏與偏好</strong>：收藏的地點、語言／地區偏好、拍拖偏好標籤等；訪客主要存於裝置，登入後可同步至雲端（Firestore）以便換機。</li>
+        <li><strong>公海（UGC）</strong>：你主動投稿／留言的文字與相片（若有）、顯示名稱或「匿名」、以及舉報／封鎖相關記錄。</li>
+        <li><strong>公開目錄資料（非你的個資）</strong>：景點封面、戲院上映／場次等參考資料由我們或第三方目錄同步至 App，用於顯示；不屬你的個人資料。</li>
         <li><strong>你上傳的行程分享內容</strong>：文字描述、標籤，以及你從相簿<strong>主動選取</strong>的相片（目前主要儲存在裝置本機，用於「分享行程」功能）。</li>
         <li><strong>情侶共享代碼</strong>：已認識的伴侶輸入同一組代碼後同步行程；代碼以安全方式儲存在裝置 Keychain。解除連線後雲端會清雙方關聯及該組共享行程／心意。</li>
         <li><strong>位置</strong>：僅在你點選「附近」並授權定位後，於<strong>裝置上</strong>計算與景點的距離以作排序；我們<strong>不會</strong>將你的 GPS 座標上傳至我們的伺服器作廣告或追蹤用途。</li>
@@ -56,8 +58,13 @@
           </tr>
           <tr>
             <td>Google Cloud Firestore</td>
-            <td>情侶共享行程同步；公海內容；電郵註冊狀態（如適用）</td>
-            <td>行程內容、共享代碼相關文件、公海投稿／留言／舉報、電郵（註冊流程）</td>
+            <td>情侶共享行程同步；登入後收藏同步；公海內容；電郵註冊狀態（如適用）</td>
+            <td>行程內容、收藏、共享代碼相關文件、公海投稿／留言／舉報、電郵（註冊流程）</td>
+          </tr>
+          <tr>
+            <td>Firebase Storage（如啟用）</td>
+            <td>景點封面／少數用戶上傳媒體託管</td>
+            <td>你主動上傳的媒體檔（若功能開放）；公開目錄圖片</td>
           </tr>
           <tr>
             <td>Firebase Cloud Messaging</td>
@@ -116,7 +123,7 @@
       <h3>Age</h3>
       <p>Paktor Map is for people <strong>17 or older</strong>. We do not knowingly collect personal data from anyone under 17. Contact us if you believe we have data about a minor.</p>
       <h3>What we collect</h3>
-      <p>Depending on features you use: account info (email, display name, user ID via Firebase — sign-in via Apple, Google, or email; <strong>no phone-number login</strong>); trip titles, notes, and schedule data; Open Sea posts/comments/reports; favorites and preferences (mostly on-device); photos you <strong>choose</strong> from your library (stored primarily on-device); couple share codes (Keychain); <strong>location only on-device</strong> for “Nearby” sorting—not uploaded for ads or tracking; push tokens if you allow notifications.</p>
+      <p>Depending on features you use: account info (email, display name, user ID via Firebase — sign-in via Apple, Google, or email; <strong>no phone-number login</strong>); trip titles, notes, and schedule data; Open Sea posts/comments/reports/blocks; favorites and preferences (on-device for guests; may sync to Firestore when signed in); photos you <strong>choose</strong> from your library; couple share codes (Keychain); <strong>location only on-device</strong> for “Nearby” sorting—not uploaded for ads or tracking; push tokens if you allow notifications. Public place covers and cinema listings are catalogue data, not your personal data.</p>
       <h3>How we use it</h3>
       <p>App functionality, personalization, local reminders, couple miss-you pushes (when enabled), and account support. We do <strong>not</strong> sell your data or use it for cross-app tracking.</p>
       <h3>Third parties</h3>
